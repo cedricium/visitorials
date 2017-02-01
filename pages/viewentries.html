@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/viewLog.css">
+    </head>
+    <body>
+        
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/visitorialsLogo.png">
+            </a>
+        </div>
+        
+        <div class="main">
+        
+            <table id="myTable" cellspacing="15">
+            
+                <tr>
+                    <th class="heading">Name</th>
+                    <th class="heading">City</th>
+                    <th class="heading">Country</th>
+                    <th class="heading">Message</th>
+                </tr>
+                <tr>
+                    <!-- Google Sheets Data Here -->
+                </tr>
+            
+            </table>
+            
+        </div>
+        
+        <script>
+            $.get('https://spreadsheets.google.com/feeds/list/1BPkEcVfvZ1BieowzhIEvnL_-TAtfhkcZypZLjfYfuuo/1/public/basic?alt=json', function(data){
+                var entry = [];
+                
+                // loop iterates through entry[] array and creates the 4 values and makes JS objects from each Google Forms entry
+                for (var i = 0; i < entry.length !== undefined; i++){
+                    // "name: Cedric, city: Sunnyvale, country: United States, message: Hello, world. This is so cool, hopefully it works!"
+                    entry.push(data.feed.entry[i].content.$t);
+
+                    // "Cedric"
+                    var name = entry[i].split(',')[0].replace('name: ', '');
+
+                    // "Sunnyvale"
+                    var city = entry[i].split(',')[1].replace(' city: ', '');
+
+                    // "United States"
+                    var country = entry[i].split(',')[2].replace(' country: ', '');
+
+                    // "Hello, world. This is so cool, hopefully it works!"
+                    var  message =   entry[i].split(' message: ')[1];
+
+                    // "1/6/2017 12:25:07"
+                    var timestamp = data.feed.entry[0].title.$t;
+
+                    var obj = {
+                    name: name,
+                    city: city,
+                    country: country,
+                    message: message
+                    }
+
+                    //document.write(obj.name);
+                    console.log(obj.name);
+
+                    // adds JSON data from url to first row below the headings
+                    var table = document.getElementById('myTable');
+                    var row = table.insertRow(1);
+
+                    var cell1, cell2, cell3, cell4;
+
+                    cell1 = row.insertCell(0);
+                    cell2 = row.insertCell(1);
+                    cell3 = row.insertCell(2);
+                    cell4 = row.insertCell(3);
+
+                    cell1.innerHTML = name;
+                    cell2.innerHTML = city;
+                    cell3.innerHTML = country;
+                    cell4.innerHTML = message;
+                };
+            });
+            
+// name: Cedric, city: Sunnyvale, country: United States, message: Hello, world. This is so cool, hopefully it works!            
+            
+        </script>
+        
+    </body>
+</html>

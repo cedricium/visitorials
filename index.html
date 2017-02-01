@@ -2,20 +2,26 @@
 <html>
 
     <head>
-        <link type="text/css" rel="stylesheet" href="https://rawgit.com/cedricium/visitorials/gh-pages/stylesheets/main.css">
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Permanent+Marker" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
+        <link type="text/css" href="pages/addentry.html">
+        <link type="text/css" href="pages/viewentries.html">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
     </head>
     <body>
         
         <div class="logo">
-            <img src="img/visitorialsLogo.png">
+            <a href="#">
+                <img src="img/visitorialsLogo.png">
+            </a>
         </div>
         
+        <!--
         <div class="punchline">
             <h1>the digital visitors log of the web</h1>
         </div>
-        
+        -->
         <div class="info">
+            <h1>the digital visitors log of the web</h1>
             <p class="name"><span>NAME: </span>Cedric</p>
             <p class="location"><span>LOCATION: </span>Mountain View, USA</p>
             <p><span>MESSAGE: </span>Welcome, stranger! You've come across the web's digital visitors log, also known as <span>Visitorials</span>. Here you will find the records of previous visitors of this site, and if you'd like, you can add to the records yourself.</p>
@@ -24,8 +30,13 @@
         </div>
         
         <div class="buttons">
-            <button id="view">View the Log</button>
-            <button id="create">Contribute to the Log</button>
+            <form style="display: inline" action="pages/viewentries.html" method="get">
+                <button id="view">View the Log</button>
+            </form>
+            
+            <form style="display: inline" action="pages/addentry.html" method="get">
+                <button id="create">Contribute to the Log</button>
+            </form>
         </div>
         
     </body>

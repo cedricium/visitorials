@@ -1,16 +1,25 @@
 html {
-    background-image: url(http://68.media.tumblr.com/727faa00e73e4c23626ac12bcf7f94cf/tumblr_nm721bhe341qfirfao1_1280.jpg);
+    
+/*    background-image: url(http://68.media.tumblr.com/103b832359ab552a05853a7d1456a7ce/tumblr_nnyprqNUkX1qfirfao1_1280.jpg);*/
+/*    background-image: url(http://68.media.tumblr.com/4f20c05dd92ea5446b59308bff577bd9/tumblr_nmxevsd2C81qfirfao1_1280.jpg);*/
+    background-image: url(http://68.media.tumblr.com/9a886b6757ed84f34124eb4635ffee6c/tumblr_nm72fmqOB61qfirfao1_1280.jpg);
     background-size: cover;
     background-color: #fafafa;
 }
 
 body {
+    margin: 0 auto;
     text-align: center;
 }
 
 h1 {
-    color: #2A2829;
+    color: rgba(42, 40, 41, 0.75);
     font-family: "Permanent Marker", sans-serif;
+}
+
+div.logo {
+    background-color: rgba(42, 40, 41, 0.75);
+    margin-bottom: 3%;
 }
 
 span {
@@ -19,13 +28,13 @@ span {
 }
 
 .info {
-    background-color: #e1e1e1;
+    background-color: #fafafa;
     border-style: solid;
     border-width: thin;
-    border-color: rgba(40, 42, 41, .3);
+    border-color: rgba(42, 40, 41, .3);
     margin: auto 20% auto 20%;
-    padding: 3%;
-    box-shadow: 2px 2px 3px #2A2829;
+    padding: 0% 2% 2% 2%;
+    box-shadow: 0px 0px 5px rgba(42, 40, 41, 0.6);
 }
 
 .info p {
@@ -44,14 +53,16 @@ span {
     padding: 8px 12px;
     font-size: 1.15em;
     font-family: "Permanent Marker", sans-serif;
-    color: rgba(40, 42, 41, 0.8);
+    color: rgba(42, 40, 41, 0.8);
     border-radius: 2px;
     border-style: none;
+    box-shadow: 0px 2px 5px rgba(42, 40, 41, 0.6);
+
 }
 
 .buttons button:hover {
     cursor: pointer;
-    color: rgba(40, 42, 41, 1);
+    color: rgba(42, 40, 41, 1);
 }
 
 .buttons #create {
