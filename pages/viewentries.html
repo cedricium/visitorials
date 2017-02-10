@@ -2,33 +2,102 @@
 <html>
 
     <head>
+        
+        <!-- Basic Page Needs
+        ---------------------------------------------------- -->
+        <meta charset="utf-8">
+        <title>View Entries - Visitorials</title>
+        <meta name="description" content="">
+        <meta name="author" content="Cedric Amaya">
+        
+        <!-- Mobile Specific Metas
+        ---------------------------------------------------- -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Fonts
+        ---------------------------------------------------- -->
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+        
+        <!-- CSS
+        ---------------------------------------------------- -->
+        <link type="text/css" rel="stylesheet" href="../stylesheets/skeleton.css">
+        
+        <!-- Linked Pages
+        ---------------------------------------------------- -->
+        <link type="text/css" href="../index.html">
+        
+        <!-- jQuery Script
+        ---------------------------------------------------- -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Permanent+Marker" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="../stylesheets/viewLog.css">
+        
     </head>
     <body>
         
-        <div class="logo">
-            <a href="../index.html">
-                <img src="../img/visitorialsLogo.png">
-            </a>
-        </div>
-        
-        <div class="main">
-        
-            <table id="myTable" cellspacing="15">
+        <div class="container">
             
-                <tr>
-                    <th class="heading">Name</th>
-                    <th class="heading">City</th>
-                    <th class="heading">Country</th>
-                    <th class="heading">Message</th>
-                </tr>
-                <tr>
-                    <!-- Google Sheets Data Here -->
-                </tr>
+            <div class="row">
+                <div class="u-full-width centerAlign">
+                    <a href="../index.html">
+                        <img src="../img/visitorialsLogo.png">
+                    </a>
+                </div>
+            </div>
             
-            </table>
+            <div class="row">
+                <div class="u-full-width" id="main">
+                   
+                    <!-- old system using table -------------
+                    <table class="centerTable" id="myTable">
+                        <thead>
+                            <tr>
+                                <th class="centerAlign">Name</th>
+                                <th class="centerAlign">City</th>
+                                <th class="centerAlign">Country</th>
+                                <th class="centerAlign">Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                Google Sheets Data Here
+                            </tr>
+                        </tbody>
+                    </table>
+                    ---------------------------------------->
+                    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="eight columns offset-by-two">
+                    <div id="footer">
+                        <div id="line"><hr /></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="u-full-width">
+                    <div id="footer">
+                        <p>
+                            <span>Visitorials</span>
+                            <br />
+
+                            Created by Cedric Amaya
+                            <br />
+
+                            Hosted on <a href="https://github.com/cedricium/visitoirals">GitHub</a>
+                            <br />
+                            
+                            Share on 
+                            <!-- twitter -->
+                            <a href="http://twitter.com/share?text=Visitorials%20-%20the%20digital%20visitors%20log%20of%20the%20web&url=http://cedricamaya.me/visitorials">Twitter</a> |
+                            
+                            <!-- facebook -->
+                            <a href="http://www.facebook.com/sharer.php?u=http://cedricamaya.me/visitorials">Facebook</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
             
         </div>
         
@@ -62,25 +131,13 @@
                     country: country,
                     message: message
                     }
-
-                    //document.write(obj.name);
-                    console.log(obj.name);
-
-                    // adds JSON data from url to first row below the headings
-                    var table = document.getElementById('myTable');
-                    var row = table.insertRow(1);
-
-                    var cell1, cell2, cell3, cell4;
-
-                    cell1 = row.insertCell(0);
-                    cell2 = row.insertCell(1);
-                    cell3 = row.insertCell(2);
-                    cell4 = row.insertCell(3);
-
-                    cell1.innerHTML = name;
-                    cell2.innerHTML = city;
-                    cell3.innerHTML = country;
-                    cell4.innerHTML = message;
+                    
+                    var mainDiv = document.getElementById("main");
+                    
+                    var entryDiv = 
+                        '<div class="six columns entry"><div><img src="http://placehold.it/400x150/ffaaaa/fff?text=' + name + '"></div><br /><p><span>LOCATION:</span> ' + city + ', ' + country + '<p><span>MESSAGE:</span> ' + message + '</p></div>';
+                    
+                    mainDiv.innerHTML += entryDiv;
                 };
             });
             
