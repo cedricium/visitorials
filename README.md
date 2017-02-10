@@ -22,8 +22,10 @@ The initial idea for this project came from seeing visitor logs at tourist spots
 * Wanted to get back into web development after only programming in C++ for the last few months
 
 ## Future Developments:
-- [ ] "log" page where people's records have been submitted
-- [ ] mobile/responsive web design (will be using Skeleton CSS)
+- [x] "log" page where people's records have been submitted
+- [x] mobile/responsive web design (will be using Skeleton CSS)
+  - still a work in progress (need to adjust media queries)
 - [ ] API-implementation for alternating homescreen image
-- [ ] back-end work and creation of a database to store records permanently
+- [x] back-end work and creation of a database to store records permanently
+  - created a database using Google Sheets and jQuery to read JSON from database
 - [ ] anything else the community would like to see!
