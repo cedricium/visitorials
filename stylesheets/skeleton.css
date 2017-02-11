@@ -450,6 +450,23 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
+/* Mobile and Below */
+@media (max-width: 480px) {
+    img { width: 300px; }
+    /* index.html */
+    #view,
+    #create,
+    
+    /* addentry.html */
+    #form-submit { width: 100%; }
+}
+
+/* fixed country selection width issue between
+    550 - ~850px
+*/
+@media (min-width: 550px) {
+    #country { width: 100% }
+}
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
